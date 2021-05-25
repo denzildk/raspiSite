@@ -1,0 +1,18 @@
+#top {
+color: yellow;
+background-color:green;
+}
+
+p {
+color:white;
+background-color:gray;
+}
+
+body {
+background-color:black;
+color:white;
+}
+
+a {
+color:aqua;
+}

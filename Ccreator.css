@@ -1,0 +1,42 @@
+#characterSheet {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid blue;
+}
+
+p#RaceLabel {
+  height: 30px;
+  border: 1px solid red;
+}
+
+#AbilityScores {
+  position: relative;
+  height: 30px;
+  width: 290px;
+  border: 1px solid green;
+}
+
+.AbilityScore,
+.AbilityModifier {
+  color: black;
+}
+
+#AbilityScores > span {
+  height: 100px;
+  width: 48px;
+  border: 2px solid green;
+  display: table-cell;
+}
+
+.AbilitySlider {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.AbilitySliderlabel {
+  float: left;
+  clear: left;
+}

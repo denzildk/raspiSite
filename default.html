@@ -4,60 +4,19 @@
 	<title>Character creator</title>
 	<h1>welcome</h1>
 	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="raceGet.js" defer></script>
+	<script src="xlmRequest.js" defer></script>
 	<script src="AbilityScores.js" defer></script>
 	<script src="Race.js" defer></script>
+	<script src="Class.js" defer></script>
+	<link rel="stylesheet" href="Ccreator.css">
 </head>
 
 
 <body>
 	<br>
 
-	<style>
-		#characterSheet {
-			position: fixed;
-			top: 0px;
-			right: 0px;
-			width: 300px;
-			height: 500px;
-			border: 1px solid blue;
-		}
 
-		p#RaceLabel {
-			height: 30px;
-			border: 1px solid red;
-		}
-
-		#AbilityScores {
-			position: relative;
-			height: 30px;
-			width: 290px;
-			border: 1px solid green;
-		}
-
-		.AbilityScore,
-		.AbilityModifier {
-			color: black
-		}
-
-		#AbilityScores>span {
-			height: 100px;
-			width: 48px;
-			border: 2px solid green;
-			display: table-cell;
-		}
-
-		.AbilitySlider {
-			display: inline-block;
-			margin-left: 20px
-		}
-
-		.AbilitySliderlabel {
-			float: left;
-			clear: left;
-		}
-	</style>
-	<div id="characterSheet">
+	<section id="characterSheet">
 		<div id="AbilityScores">
 			<span id="StrenghtBox">
 				<p class="AbilityName">
@@ -131,54 +90,97 @@
 		<br><br><br><br><br>
 		<p id="RaceLabel">Race: <span id="UserRace">Human</span></p>
 		<p id="ClassLabel">Class: <span id="UserClass">Fighter</span></p>
-	</div>
-
-	<div id="UserAbilityScores">
-		<label for="UserAbilityScores">Ability scores</label>
-		<label for=""></label> <select>
-			<option>Point Buy</option>
-		</select>
-		<br>
-		<div id="UserPointBuyAbilityScores">
-			<label for="Str" class="AbilitySliderlabel">Strength:</label>
-			<input type="range" min="8" max="15" value="10" id="UserStr" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label for="Dex" class="AbilitySliderlabel">Dexterity:</label>
-			<input type="range" min="8" max="15" value="10" id="UserDex" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label for="Con" class="AbilitySliderlabel">Constitution:</label>
-			<input type="range" min="8" max="15" value="10" id="UserCon" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label for="Int" class="AbilitySliderlabel">Inteligence:</label>
-			<input type="range" min="8" max="15" value="10" id="UserInt" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label for="Wis" class="AbilitySliderlabel">Wisdom:</label>
-			<input type="range" min="8" max="15" value="10" id="UserWis" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label for="Cha" class="AbilitySliderlabel">Charisma:</label>
-			<input type="range" min="8" max="15" value="10" id="UserCha" oninput="updateAbilityScores()"
-				onchange="updateAbilityScores()" class="AbilitySlider"><br>
-			<label>Points used: </label><span id="PointsUsed">0</span><span>/</span><span id="PointsMax">27</span>
-
+	</section>
+	<section id="CharacterSetup">
+		<div>
+			<label for="UserName">Name: </label> <input type="text" id="UserName"></input>
 		</div>
+		
+		<section id="UserCharacteristic">
 
-	</div>
-	<br>
-	<label>choose race</label>
-	<select id="raceSelect"></select>
+		</section>
+		<hr>
+		<section id="UserAbilityScores">
 
-	<br>
-	<br>
 
-	<label>Choose class</label>
-	<select>
-		<option value="Bard">Bard</option>
-		<option value="Wizard">Wizard</option>
-	</select>
+			<label for="UserAbilityScores">Ability scores</label>
+			<label for=""></label> <select>
+				<option>Point Buy</option>
+			</select>
+			<br>
+			<div id="UserPointBuyAbilityScores">
+				<label for="Str" class="AbilitySliderlabel">Strength:</label>
+				<input type="range" min="8" max="15" value="10" id="UserStr" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<label for="Dex" class="AbilitySliderlabel">Dexterity:</label>
+				<input type="range" min="8" max="15" value="10" id="UserDex" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<label for="Con" class="AbilitySliderlabel">Constitution:</label>
+				<input type="range" min="8" max="15" value="10" id="UserCon" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<label for="Int" class="AbilitySliderlabel">Inteligence:</label>
+				<input type="range" min="8" max="15" value="10" id="UserInt" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<label for="Wis" class="AbilitySliderlabel">Wisdom:</label>
+				<input type="range" min="8" max="15" value="10" id="UserWis" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<label for="Cha" class="AbilitySliderlabel">Charisma:</label>
+				<input type="range" min="8" max="15" value="10" id="UserCha" oninput="updateAbilityScores()"
+					onchange="updateAbilityScores()" class="AbilitySlider"><br>
+				<div onmouseover="updateAbilityScores()">
+					<label>Points used: </label><span id="PointsUsed">0</span><span>/</span><span
+						id="PointsMax">27</span>
+				</div>
+			</div>
+		</section>
+		<hr>
+		<section id="UserRace">
+			<label>choose race</label>
+			<select id="raceSelect"></select>
+			<section id="UserDetails">
+				<br>
+				<div>
+					<label for="UserAlignment">Alignment:</label> <input type="text" id="UserAlignment"></input>
+				</div><br>
+				<div>
+					<label for="UserAge">Age:</label><input type="text" id="UserAge"></input>
+				</div><br>
+				<div>
+					<label for="UserHeight">Height: </label> <input type="text" id="UserHeight"></input>
+				</div><br>
+				<div>
+					<label for="UserWeight">Weight: </label> <input type="text" id="UserWeight"></input>
+				</div><br>
+				<div>
+					<label for="UserEyes">Eyes: </label> <input type="text" id="UserEyes"></input>
+				</div><br>
+				<div>
+					<label for="UserSkin">Skin: </label> <input type="text" id="UserSkin"></input>
+				</div><br>
+				<div>
+					<label for="UserHair">Hair: </label> <input type="text" id="UserHair"></input>
+				</div><br>
+			</section>
+		</section>
+		<hr>
+		<section id="UserClass">
+			<label>Choose class</label>
+			<select>
+				<option value="Bard">Bard</option>
+				<option value="Wizard">Wizard</option>
+			</select>
+		</section>
+		<hr>
+		<section id="UserBlackground">
+			<label for="select">Choose a Background</label>
+			<select>
+				<option value="Soldier">Soldier</option>
+			</select>
+		</section>
+	</section>
 	<br><br>
 
 	<div id="testDiv">hi i'm test div</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<p>hi</p>
+	<div id="testDiv2">hi i'm test div</div>
 
 </body>

@@ -4,6 +4,11 @@ require_once('../config.php');
 require_once('../dbConn/MariadbConn.php');
 //header('Access-Control-Allow-Origin: *');
 header('Content-type: text/xml');
+header('Access-Control-Allow-Origin: *');
+
+header('Access-Control-Allow-Methods: GET, POST');
+
+header("Access-Control-Allow-Headers: *");
 $xmlinput = null;
 if (file_get_contents('php://input') == null) {
 	global $xmlinput;

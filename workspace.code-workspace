@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"driver": "MariaDB",
+				"name": "MySQL",
+				"database": "roleplay",
+				"username": "root",
+				"password": ""
+			},
+			{
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3306,
+				"driver": "MariaDB",
+				"name": "roleplay",
+				"database": "roleplay",
+				"username": "root",
+				"password": ""
+			}
+		]
+	}
+}
